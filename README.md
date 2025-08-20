@@ -1,43 +1,55 @@
-# 📡 Pryamoy Kanal – Agregador Cronológico de Redes Sociais
+# 📡 Pryamoy Kanal  
 
-O **Pryamoy Kanal** (Прямой Канал = Canal Direto) é um projeto de código aberto que busca criar um **agregador de redes sociais** simples, transparente e **sem algoritmos de recomendação**.  
-Aqui, os conteúdos são exibidos em **ordem cronológica**, garantindo que usuários e criadores tenham acesso ao que realmente foi publicado, sem manipulação do feed.
-
----
-
-## 🚀 Funcionalidades previstas
-
-- 🔗 Integração com múltiplas redes sociais (Twitter/X, Mastodon, Instagram, YouTube, etc.)
-- 👤 Perfis separados para **usuários** e **conteudistas**
-- 🕒 Linha do tempo **100% cronológica**
-- 🔍 Filtros simples por rede ou tipo de conteúdo
-- 💬 Interações básicas (curtir, comentar, compartilhar) *(planejado)*
-- 📱 Interface responsiva (web e mobile)
+> 🕒 Um agregador cronológico de redes sociais — sem algoritmos de recomendação.  
 
 ---
 
-## 🛠️ Tecnologias (em estudo)
-
-- **Frontend:** React / Next.js + Tailwind CSS  
-- **Backend:** laravel  
-- **Banco de dados:** PostgreSQL
-- **Autenticação:** OAuth 2.0 / JWT  
-- **Infraestrutura:** Docker, Kubernetes (futuro)
-
----
-
-## 📌 Objetivo do projeto
-
-A maioria das redes sociais organiza o feed a partir de algoritmos de recomendação, que filtram e priorizam conteúdos de acordo com interesses comerciais.  
-
-O **Pryamoy Kanal** propõe uma alternativa: um espaço onde o conteúdo é exibido de forma **simples, direta e cronológica**, colocando de volta nas mãos do usuário o controle sobre o que vê.
+![Laravel](https://img.shields.io/badge/Laravel-12.x-red?logo=laravel)  
+![PHP](https://img.shields.io/badge/PHP-8.2-blue?logo=php)  
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-336791?logo=postgresql)  
+![Redis](https://img.shields.io/badge/Cache-Redis-red?logo=redis)  
+![License](https://img.shields.io/badge/license-MIT-green)  
+![Status](https://img.shields.io/badge/status-Em%20desenvolvimento-yellow)  
 
 ---
 
-## 🤝 Como contribuir
+## ✨ Visão Geral
 
-1. Faça um fork do repositório  
-2. Crie uma branch para sua feature/fix:  
-   ```bash
-   git checkout -b minha-feature
-# PryamoyKanal
+O **Pryamoy Kanal** (Прямой Канал = *Canal Direto*) é um projeto que reúne publicações de várias redes sociais em um único feed **100% cronológico**.  
+Sem filtros, sem manipulação, sem algoritmos de recomendação.  
+
+---
+
+## 🚀 Funcionalidades
+
+- 🔗 Integração com múltiplas redes sociais  
+- 🕒 Linha do tempo **cronológica**  
+- 👤 Perfis para usuários e criadores de conteúdo  
+- 🔍 Filtros por rede e tipo de post  
+- 💬 Interações básicas *(planejado)*  
+
+---
+
+## 🛠️ Tecnologias
+
+- **Backend:** Laravel + PHP 8.2  
+- **Banco de dados:** PostgreSQL (com particionamento para performance)  
+- **Cache:** Redis para feed rápido  
+- **Infra:** Docker, Horizon (queues), futura escalabilidade horizontal  
+
+---
+
+## 📌 Objetivo
+
+Dar controle de volta ao usuário: um feed **simples e direto**, que respeita a ordem real das publicações.  
+
+---
+
+## 🤝 Contribuição
+
+Quer ajudar? Faça um fork, crie sua branch e abra um Pull Request:  
+
+```bash
+git checkout -b minha-feature
+git commit -m "feat: adiciona nova funcionalidade X"
+git push origin minha-feature
