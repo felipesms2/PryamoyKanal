@@ -2,7 +2,7 @@ python -c "
 import csv, requests
 
 API_KEY = 'AIzaSyBB93pQFssH3DTGXfROEojYCJARPOzQj04'
-CHANNEL_ID = 'UCQimGgtBQmF4zxOdnARWFpg'
+CHANNEL_ID = 'UCib793mnUOhWymCh2VJKplQ'
 
 base_url = 'https://www.googleapis.com/youtube/v3'
 videos = []
