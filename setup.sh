@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+sudo apt update && sudo apt install -y mkcert
 
 PROJECT_NAME="pryamoy"
 DOMAIN="${PROJECT_NAME}.test"

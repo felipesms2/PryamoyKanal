@@ -2,19 +2,20 @@ services:
   web-server:
     image: felipesms/liga:1.0
     ports:
-      - "8080:80"
-      - "8443:443"
+      - "80:80"
+      - "443:443"
     volumes:
       - ./:/app/
       - ./resources/config/ports.conf:/etc/apache2/ports.conf
       - ./resources/config/000-default.conf:/etc/apache2/sites-available/000-default.conf
       - ./resources/config/envvars:/etc/apache2/envvars
-      - ./docker/certs:/etc/apache2/certs
+      - ./docker/certs:/etc/apache2/certs   # << certificados confiáveis via mkcert
       - ./entrypoint.sh:/app/entrypoint.sh
     command: ["bash", "-c", "bash /app/entrypoint.sh && tail -f /dev/null"]
     working_dir: /app/
     depends_on:
       - mariadb
+
   mariadb:
     image: mariadb:latest
     environment:
@@ -26,7 +27,8 @@ services:
     ports:
       - "3340:3306"
     volumes:
-      - mariadb_data:/var/lib/mysql
+      - ./mariadb_data:/var/lib/mysql
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     environment:
@@ -38,6 +40,3 @@ services:
       - "65009:80"
     depends_on:
       - mariadb
-
-volumes:
-  mariadb_data:
