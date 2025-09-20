@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Platforms>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\YoutubeThumbnail>
  */
-class PlatformsFactory extends Factory
+class YoutubeThumbnailFactory extends Factory
 {
     /**
      * Define the model's default state.

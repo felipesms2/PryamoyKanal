@@ -3,10 +3,10 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\Youtube;
+use App\Models\YoutubeThumbnail;
 use Illuminate\Auth\Access\Response;
 
-class YoutubePolicy
+class YoutubeThumbnailPolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -19,7 +19,7 @@ class YoutubePolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Youtube $youtube): bool
+    public function view(User $user, YoutubeThumbnail $youtubeThumbnail): bool
     {
         return false;
     }
@@ -35,7 +35,7 @@ class YoutubePolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Youtube $youtube): bool
+    public function update(User $user, YoutubeThumbnail $youtubeThumbnail): bool
     {
         return false;
     }
@@ -43,7 +43,7 @@ class YoutubePolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Youtube $youtube): bool
+    public function delete(User $user, YoutubeThumbnail $youtubeThumbnail): bool
     {
         return false;
     }
@@ -51,7 +51,7 @@ class YoutubePolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, Youtube $youtube): bool
+    public function restore(User $user, YoutubeThumbnail $youtubeThumbnail): bool
     {
         return false;
     }
@@ -59,7 +59,7 @@ class YoutubePolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, Youtube $youtube): bool
+    public function forceDelete(User $user, YoutubeThumbnail $youtubeThumbnail): bool
     {
         return false;
     }

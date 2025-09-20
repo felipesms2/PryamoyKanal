@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePlatformsRequest;
-use App\Http\Requests\UpdatePlatformsRequest;
-use App\Models\Platforms;
+use App\Http\Requests\StoreYoutubeThumbnailRequest;
+use App\Http\Requests\UpdateYoutubeThumbnailRequest;
+use App\Models\YoutubeThumbnail;
 
-class PlatformsController extends Controller
+class YoutubeThumbnailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class PlatformsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePlatformsRequest $request)
+    public function store(StoreYoutubeThumbnailRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class PlatformsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Platforms $platforms)
+    public function show(YoutubeThumbnail $youtubeThumbnail)
     {
         //
     }
@@ -43,7 +43,7 @@ class PlatformsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Platforms $platforms)
+    public function edit(YoutubeThumbnail $youtubeThumbnail)
     {
         //
     }
@@ -51,7 +51,7 @@ class PlatformsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePlatformsRequest $request, Platforms $platforms)
+    public function update(UpdateYoutubeThumbnailRequest $request, YoutubeThumbnail $youtubeThumbnail)
     {
         //
     }
@@ -59,7 +59,7 @@ class PlatformsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Platforms $platforms)
+    public function destroy(YoutubeThumbnail $youtubeThumbnail)
     {
         //
     }
