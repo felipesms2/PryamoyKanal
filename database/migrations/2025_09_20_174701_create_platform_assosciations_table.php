@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('platform_assosciations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('platform_id')->constrained('platforms')->onDelete('cascade');
             $table->foreignId('people_id')->constrained('people')->onDelete('cascade');
+            $table->foreignId('platform_id')->constrained('platforms')->onDelete('cascade');
             $table->unsignedBigInteger('assosciation_status')->nullable();
             $table->softDeletes();
             $table->timestamps();
