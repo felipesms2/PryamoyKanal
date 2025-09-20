@@ -3,21 +3,21 @@ import json
 
 url = "https://www.tiktok.com/@metropolesoficial/video/7551992484558097720"
 
-# Extrair o ID do vídeo da URL
-video_id = url.split("/")[-1]
-
 with sync_playwright() as p:
-    browser = p.chromium.launch(headless=True)
+    browser = p.chromium.launch(headless=False)  # melhor deixar False para debug
     page = browser.new_page()
-    page.goto(url)
+    page.goto(url, wait_until="networkidle")  # espera a página ficar "quieta"
+
+    # Espera explicitamente pelo SIGI_STATE
+    page.wait_for_selector("script#SIGI_STATE")
 
     raw_state = page.locator("script#SIGI_STATE").inner_text()
     data = json.loads(raw_state)
 
-    # Salvar o JSON em arquivo
-    filename = f"{video_id}.json"
+    # Salva o JSON
+    filename = url.split("/")[-1] + ".json"
     with open(filename, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        json.dump(data, f, indent=2, ensure_ascii=False)
 
-    print(f"Arquivo salvo como {filename}")
+    print(f"Arquivo salvo: {filename}")
     browser.close()
