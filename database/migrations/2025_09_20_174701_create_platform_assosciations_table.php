@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('platform_id')->constrained('platforms')->onDelete('cascade');
             $table->foreignId('people_id')->constrained('people')->onDelete('cascade');
-            $table->unsignedBigInteger('platform_status')->nullable();
+            $table->unsignedBigInteger('assosciation_status')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
