@@ -15,6 +15,7 @@ chmod -R 777 /app/
 # Banco SQLite
 rm -f /app/database/database.sqlite
 touch /app/database/database.sqlite
+php artisan migrate:fresh --seed
 chmod -R 777 /app/database/database.sqlite
 
 # Dependências Laravel
