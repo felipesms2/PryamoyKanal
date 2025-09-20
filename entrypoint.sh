@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+pip install requests yt-dlp --break-system-packages
 
 # Atualiza pacotes e instala zsh
 apt update

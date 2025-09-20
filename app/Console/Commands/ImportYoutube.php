@@ -8,7 +8,7 @@ use App\Models\YoutubeThumbnail;
 
 class ImportYoutube extends Command
 {
-    protected $signature = 'youtube:import {file=resources/videos.json}';
+    protected $signature = 'youtube:import {file=storage/app/youtube/videos.json}';
     protected $description = 'Importa vídeos do arquivo JSON gerado pelo yt-dlp';
 
     public function handle()
