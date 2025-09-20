@@ -16,6 +16,12 @@ return new class extends Migration
             $table->string('name');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->string('preffered_alias')->nullable();
+            $table->dateTime('dt_request_as_publisher')->nullable();
+            $table->dateTime('dt_authorized_as_publisher')->nullable();
+            $table->string('invite_code')->nullable();
+            $table->string('invited_code')->nullable();
+            $table->unsignedBigInteger('user_id_invited');
+            $table->unsignedBigInteger('people_id_invited');
             $table->timestamps();
         });
     }
