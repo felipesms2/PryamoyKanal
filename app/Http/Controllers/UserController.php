@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreAuthRequest;
-use App\Http\Requests\UpdateAuthRequest;
-use App\Models\Auth;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
+use App\Models\User;
 
 
-class AuthController extends Controller
+
+
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,11 +30,11 @@ class AuthController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreAuthRequest $request)
+    public function store(StoreUserRequest $request)
     {
         return response()->json([
             'success' => true,
-            'message' => 'User registered successfully',
+            'message' => 'User created successfully.',
             'data' => $request->all()
         ])->setStatusCode(201);
     }
@@ -40,7 +42,7 @@ class AuthController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Auth $auth)
+    public function show(User $user)
     {
         //
     }
@@ -48,7 +50,7 @@ class AuthController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Auth $auth)
+    public function edit(User $user)
     {
         //
     }
@@ -56,7 +58,7 @@ class AuthController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAuthRequest $request, Auth $auth)
+    public function update(UpdateUserRequest $request, User $user)
     {
         //
     }
@@ -64,7 +66,7 @@ class AuthController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Auth $auth)
+    public function destroy(User $user)
     {
         //
     }
