@@ -32,10 +32,16 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
+        $userInstance = new User;
+        $userInstance->name = $request->name;
+        $userInstance->email = $request->email;
+        $userInstance->password = bcrypt($request->password);
+        $userInstance->save();
+
         return response()->json([
             'success' => true,
             'message' => 'User created successfully.',
-            'data' => $request->all()
+            'data' => $userInstance
         ])->setStatusCode(201);
     }
 
