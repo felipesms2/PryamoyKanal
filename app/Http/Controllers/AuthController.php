@@ -6,6 +6,7 @@ use App\Http\Requests\StoreAuthRequest;
 use App\Http\Requests\UpdateAuthRequest;
 use App\Models\Auth;
 
+
 class AuthController extends Controller
 {
     /**
@@ -29,7 +30,7 @@ class AuthController extends Controller
      */
     public function store(StoreAuthRequest $request)
     {
-        //
+        
     }
 
     /**
