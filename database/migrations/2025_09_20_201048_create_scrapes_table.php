@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('scrapes', function (Blueprint $table) {
             $table->id();
-            $table->ubsignedBigInteger('publisher_id');
+            $table->unsignedSmallInteger('publisher_id');
             $table->dateTime('schedule_to');
             $table->dateTime('dt_started')->nullable();
             $table->dateTime('dt_completed')->nullable();
