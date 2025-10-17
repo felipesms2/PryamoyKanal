@@ -11,10 +11,11 @@ services:
       - ./resources/config/envvars:/etc/apache2/envvars
       - ./docker/certs:/etc/apache2/certs   # << certificados confiáveis via mkcert
       - ./entrypoint.sh:/app/entrypoint.sh
-    command: ["bash", "-c", "bash /app/entrypoint.sh && tail -f /dev/null"]
+    command: ["bash", "-c", "bash /app/entrypoint.sh"]
     working_dir: /app/
     depends_on:
       - mariadb
+      - mailhog
 
   mariadb:
     image: mariadb:latest
@@ -40,3 +41,11 @@ services:
       - "65009:80"
     depends_on:
       - mariadb
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: mailhog
+    ports:
+      - "8025:8025" # Interface web: http://localhost:8025
+    environment:
+      MH_STORAGE: maildir
+    restart: unless-stopped
