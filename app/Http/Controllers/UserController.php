@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 
 
 
@@ -33,10 +34,12 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
     {
         $userInstance = new User;
+        $userInstance->truncate();
         $userInstance->name = $request->name;
         $userInstance->email = $request->email;
         $userInstance->password = bcrypt($request->password);
         $userInstance->save();
+        event(new Registered($userInstance));
 
         return response()->json([
             'success' => true,

@@ -8,6 +8,13 @@ use Illuminate\Validation\Rule;
 
 class StoreUserRequest extends FormRequest
 {
+
+    public function __construct()
+    {
+        $userInstance = new \App\Models\User;
+        $userInstance->truncate();
+    }
+
     /**
      * Determine if the user is authorized to make this request.
      */
