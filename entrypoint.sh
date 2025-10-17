@@ -39,6 +39,7 @@ if [ ! -f .env ]; then
     sed -i 's/^APP_DEBUG=.*/APP_DEBUG=true/' .env
     php artisan key:generate || true
 else
+    cp .env.example .env
     echo -e "${GREEN}✅ .env já existe.${NC}"
 fi
 
